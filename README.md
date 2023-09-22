@@ -65,6 +65,26 @@ b. Protokol layer transport apa yang digunakan?<br />
    ![No Image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/blob/main/Image/no.3.png)
 
 
+## Soal 6 
+Soal 6-7 menggunakan file pcap yang sama. Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
+
+## Penyelesaian 
+- Pertama melakukan filtering **frame.number==7812**
+- lalu kita klik pilihan ip tersebut,lalu muncul informasi ip source nya
+![No Image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/blob/main/Image/6.png)
+- Setelah itu kita melakukan _Decrypt_ pada ip source nya
+   - 10 = J
+   - 4 = D
+   - 18 = R
+   - 14 = N
+   - 10 = J
+   - 1 = A
+- Dan hasilnya yaitu **JDRNJA**
+- Berikut bukti flag:
+  ![No Image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/blob/main/Image/soal%20no%206.a.png)
+  
+
+
 
 
 
