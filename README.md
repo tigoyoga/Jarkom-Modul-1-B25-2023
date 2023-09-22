@@ -117,7 +117,29 @@ Soal 6-7 menggunakan file pcap yang sama. Seorang anak bernama Udin Berteman den
 - Dan hasilnya yaitu **JDRNJA**
 - Berikut bukti flag:
   ![No Image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/blob/main/Image/soal%20no%206.a.png)
+
+## Soal 7
+Berapa jumlah packet yang menuju IP 184.87.193.88?
+
+## Penyelesaian
+- Untuk mengetahui jumlah paket yang menuju suatu IP, kita bisa menggunakan query filter `ip.src == 184.87.193.88` yang menampilkan paket dengan ip destination 184.87.193.88.
+- Hasilnya yaitu terdapat 6 paket.
+  ![tujuh](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/e3083bb1-5089-4c22-a330-45d464643a2e)
+
+- Bukti flag :
+  ![tujuhh](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/41588c0d-7692-4ad7-af51-e4c8291c5b64)
+
+## Soal 8
+Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad).
+
+## Penyelesaian
+- Untuk mengambil paket yang menuju port 80 kita bisa menggunakan query filter sesuai perintah soal yaitu `tcp.dstport == 80 || udp.dstport == 80` yang berarti melihat semua paket yang dikirim atau diterima oleh perangkat yang menggunakan port 80 baik melalui protokol TCP maupun UDP.
+
+- Bukti flag :
+  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/3f21553f-671d-4d86-8e6d-8925331795ce)
+
   
+
 
 
 
