@@ -138,7 +138,24 @@ Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yan
 - Bukti flag :
   ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/3f21553f-671d-4d86-8e6d-8925331795ce)
 
-  
+## Soal 9
+Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
+
+## Penyelesaian
+- Untuk mengambil paket yang berasal dan menuju dari suatu alamat, kita bisa menggunakan query filter `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34` yang berarti melihat semua paket yang dikirim dari alamat IP 10.51.40.1 ke alamat IP selain 10.39.55.34.
+
+- Bukti flag :
+  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/a70dee98-6a6e-4e16-bd61-5dd4f3ce171d)
+
+## Soal 10
+Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet.
+
+## Penyelesaian
+- Untuk menampilkan paket yang memiliki protocol telnet, kita query filter `telnet`.
+- Setelah dicoba satu per satu dengan analyze TCP Stream atau bisa melihat detail -> Telnet, maka ditemukan string sesuai format [username]:[password], yaitu `dhafin:kesayangannyak0k0`.
+
+- Bukti flag :
+  ![sepuluh](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/cd86e10d-4841-4ac2-aba7-5a103ac1de7d)
 
 
 
