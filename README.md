@@ -67,14 +67,16 @@ b. Protokol layer transport apa yang digunakan?<br />
 ## Soal 4
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
 ## Penyelesaian
-![no-4](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/447e1959-c269-4e3b-b71f-98c893d60b9f)
+![no-4](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/0b4574bb-6533-4e16-932d-230bc224a6c2)
+
 - Cari paket no 130, bisa dengan scroll manual atau dengan query filter `frame.number == 130`.
 - Buka Detail dari paket tersebut.
 - Klik pada bagian header **User Datagram Protocol**.
 - Terdapat nilai checksum yaitu `0x18e5`.
 
 - Bukti flag :
-  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/d24723af-b91a-4c85-99b1-2143636b3b6d)
+![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/bdeb99ff-c0b6-482f-a696-e3ed75934ad1)
+
 
 ## Soal 5
 Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.
@@ -85,20 +87,20 @@ Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk men
 ## Penyelesaian
 - Terdapat 2 file yaitu file .zip yang berisi connext.txt dan memerlukan sebuah password, dan file pcap untuk mencari password tersebut.
 - Pilih paket nomor 25 dan klik analisis TCP Stream.
-  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/28ce46fe-c1fb-4a46-9a6c-ef9709312a3e)
+![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/78f17141-98a1-4c03-a89b-d87315062dad)
 - Pada paket tersebut ditemukan sebuah password `NWltcGxlUGFzNXdvcmQ=`, namun kita harus decode dengan base64.
 - Setelah di decode, menghasilkan string `5implePas5word`.
-  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/e317bb78-e6ca-48bd-be44-7c256ed715d2)
+![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/690cb9d8-71da-49fe-b9f4-d214e21b16f1)
 - Setelah membuka `connect.txt` dengan password diatas, berikut isi filenya.
-  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/272b1e65-b3ee-48a7-812e-7f2dba9db2b5)
+![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/e66baffc-5d36-4782-92fe-8dab8975e764)
 - Untuk menjawab soal pertama, yaitu berapa banyak packet, kita buka file pcap dan terlihat jumlah total packet pada bagian pojok kanan bawah, yaitu `packets : 60 - Displayed : 60`
-  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/336d8ab8-57f8-48af-b17c-d4bd475f3b46)
+![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/4aa6704a-13d9-4da2-b32a-dc45ff697e57)
 - Untuk menjawab soal kedua, yaitu port berapa yang digunakan service SMTP, kita bisa memilih salah satu paket yang memiliki protocol `SMTP`, lalu klik detail pada bagian Transmission Control Protocol, dan tertulis `Source Port : 25`.
-  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/004664b6-435b-4214-a63b-3e10d5483ec2)
+![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/dbf22f38-f601-4f74-9ca8-9ac55d454d40)
 - Untuk menjawab soal ketiga, yaitu berapakah yang merupakan public IP, kita bisa melihat range public IP yaitu selain `10.x.x.x` dan `192.x.x.x`, jadi jawabannya adalah `74.53.140.153`.
 
 - Bukti flag :
-  ![limaaa](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/0f03a44e-99d3-4c74-9489-e2faf1928192)
+![limaaa](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/83d731fb-bd69-48ef-ae68-fbdb13296d8b)
 
 ## Soal 6 
 Soal 6-7 menggunakan file pcap yang sama. Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
@@ -124,10 +126,10 @@ Berapa jumlah packet yang menuju IP 184.87.193.88?
 ## Penyelesaian
 - Untuk mengetahui jumlah paket yang menuju suatu IP, kita bisa menggunakan query filter `ip.src == 184.87.193.88` yang menampilkan paket dengan ip destination 184.87.193.88.
 - Hasilnya yaitu terdapat 6 paket.
-  ![tujuh](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/e3083bb1-5089-4c22-a330-45d464643a2e)
+![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/67e8d0f0-23b5-4a23-8271-f9e4302e70c0)
 
 - Bukti flag :
-  ![tujuhh](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/41588c0d-7692-4ad7-af51-e4c8291c5b64)
+![tujuhh](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/c5269f9f-0969-4085-a3ca-db5ac20f74b0)
 
 ## Soal 8
 Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yang menuju port 80! (Jika terdapat lebih dari 1 port, maka urutkan sesuai dengan abjad).
@@ -136,7 +138,8 @@ Berikan kueri filter sehingga wireshark hanya mengambil semua protokol paket yan
 - Untuk mengambil paket yang menuju port 80 kita bisa menggunakan query filter sesuai perintah soal yaitu `tcp.dstport == 80 || udp.dstport == 80` yang berarti melihat semua paket yang dikirim atau diterima oleh perangkat yang menggunakan port 80 baik melalui protokol TCP maupun UDP.
 
 - Bukti flag :
-  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/3f21553f-671d-4d86-8e6d-8925331795ce)
+  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/d71c961b-da34-4677-907b-d3616a4152fe)
+
 
 ## Soal 9
 Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari alamat 10.51.40.1 tetapi tidak menuju ke alamat 10.39.55.34!
@@ -145,7 +148,7 @@ Berikan kueri filter sehingga wireshark hanya mengambil paket yang berasal dari 
 - Untuk mengambil paket yang berasal dan menuju dari suatu alamat, kita bisa menggunakan query filter `ip.src == 10.51.40.1 && ip.dst != 10.39.55.34` yang berarti melihat semua paket yang dikirim dari alamat IP 10.51.40.1 ke alamat IP selain 10.39.55.34.
 
 - Bukti flag :
-  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/a70dee98-6a6e-4e16-bd61-5dd4f3ce171d)
+![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/9853ac60-cb92-4be2-a352-968bd35fd0f0)
 
 ## Soal 10
 Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet.
@@ -153,9 +156,11 @@ Sebutkan kredensial yang benar ketika user mencoba login menggunakan Telnet.
 ## Penyelesaian
 - Untuk menampilkan paket yang memiliki protocol telnet, kita query filter `telnet`.
 - Setelah dicoba satu per satu dengan analyze TCP Stream atau bisa melihat detail -> Telnet, maka ditemukan string sesuai format [username]:[password], yaitu `dhafin:kesayangannyak0k0`.
+![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/6e95b73f-b904-4d79-8461-45df3fec7a69)
 
 - Bukti flag :
-  ![sepuluh](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/cd86e10d-4841-4ac2-aba7-5a103ac1de7d)
+![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/7df065f6-1995-4160-b23b-c3c88e20da20)
+
 
 
 
