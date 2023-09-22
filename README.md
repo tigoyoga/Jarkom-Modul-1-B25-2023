@@ -64,6 +64,17 @@ b. Protokol layer transport apa yang digunakan?<br />
 - Berikut Flag yang saya dapatkan :
    ![No Image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/blob/main/Image/no.3.png)
 
+## Soal 4
+Berapa nilai checksum yang didapat dari header pada paket nomor 130?
+## Penyelesaian
+![no-4](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/447e1959-c269-4e3b-b71f-98c893d60b9f)
+- Cari paket no 130, bisa dengan scroll manual atau dengan query filter **frame.number == 130**.
+- Buka Detail dari paket tersebut.
+- Klik pada bagian header **User Datagram Protocol**.
+- Terdapat nilai checksum yaitu **0x18e5**.
+
+- Bukti flag :
+  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/d24723af-b91a-4c85-99b1-2143636b3b6d)
 
 ## Soal 6 
 Soal 6-7 menggunakan file pcap yang sama. Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
