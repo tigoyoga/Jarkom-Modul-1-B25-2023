@@ -68,13 +68,37 @@ b. Protokol layer transport apa yang digunakan?<br />
 Berapa nilai checksum yang didapat dari header pada paket nomor 130?
 ## Penyelesaian
 ![no-4](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/447e1959-c269-4e3b-b71f-98c893d60b9f)
-- Cari paket no 130, bisa dengan scroll manual atau dengan query filter **frame.number == 130**.
+- Cari paket no 130, bisa dengan scroll manual atau dengan query filter `frame.number == 130`.
 - Buka Detail dari paket tersebut.
 - Klik pada bagian header **User Datagram Protocol**.
-- Terdapat nilai checksum yaitu **0x18e5**.
+- Terdapat nilai checksum yaitu `0x18e5`.
 
 - Bukti flag :
   ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/d24723af-b91a-4c85-99b1-2143636b3b6d)
+
+## Soal 5
+Elshe menemukan suatu file packet capture yang menarik. Bantulah Elshe untuk menganalisis file packet capture tersebut.
+  a. Berapa banyak packet yang berhasil di capture dari file pcap tersebut?
+  b. Port berapakah pada server yang digunakan untuk service SMTP?
+  c. Dari semua alamat IP yang tercapture, IP berapakah yang merupakan public IP?
+
+## Penyelesaian
+- Terdapat 2 file yaitu file .zip yang berisi connext.txt dan memerlukan sebuah password, dan file pcap untuk mencari password tersebut.
+- Pilih paket nomor 25 dan klik analisis TCP Stream.
+  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/28ce46fe-c1fb-4a46-9a6c-ef9709312a3e)
+- Pada paket tersebut ditemukan sebuah password `NWltcGxlUGFzNXdvcmQ=`, namun kita harus decode dengan base64.
+- Setelah di decode, menghasilkan string `5implePas5word`.
+  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/e317bb78-e6ca-48bd-be44-7c256ed715d2)
+- Setelah membuka `connect.txt` dengan password diatas, berikut isi filenya.
+  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/272b1e65-b3ee-48a7-812e-7f2dba9db2b5)
+- Untuk menjawab soal pertama, yaitu berapa banyak packet, kita buka file pcap dan terlihat jumlah total packet pada bagian pojok kanan bawah, yaitu `packets : 60 - Displayed : 60`
+  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/336d8ab8-57f8-48af-b17c-d4bd475f3b46)
+- Untuk menjawab soal kedua, yaitu port berapa yang digunakan service SMTP, kita bisa memilih salah satu paket yang memiliki protocol `SMTP`, lalu klik detail pada bagian Transmission Control Protocol, dan tertulis `Source Port : 25`.
+  ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/004664b6-435b-4214-a63b-3e10d5483ec2)
+- Untuk menjawab soal ketiga, yaitu berapakah yang merupakan public IP, kita bisa melihat range public IP yaitu selain `10.x.x.x` dan `192.x.x.x`, jadi jawabannya adalah `74.53.140.153`.
+
+- Bukti flag :
+  ![limaaa](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/0f03a44e-99d3-4c74-9489-e2faf1928192)
 
 ## Soal 6 
 Soal 6-7 menggunakan file pcap yang sama. Seorang anak bernama Udin Berteman dengan SlameT yang merupakan seorang penggemar film detektif. sebagai teman yang baik, Ia selalu mengajak slamet untuk bermain valoranT bersama. suatu malam, terjadi sebuah hal yang tak terdUga. ketika udin mereka membuka game tersebut, laptop udin menunjukkan sebuah field text dan Sebuah kode Invalid bertuliskan "server SOURCE ADDRESS 7812 is invalid". ketika ditelusuri di google, hasil pencarian hanya menampilkan a1 e5 u21. jiwa detektif slamet pun bergejolak. bantulah udin dan slamet untuk menemukan solusi kode error tersebut.
