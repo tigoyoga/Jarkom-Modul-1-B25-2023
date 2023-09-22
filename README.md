@@ -124,7 +124,7 @@ Soal 6-7 menggunakan file pcap yang sama. Seorang anak bernama Udin Berteman den
 Berapa jumlah packet yang menuju IP 184.87.193.88?
 
 ## Penyelesaian
-- Untuk mengetahui jumlah paket yang menuju suatu IP, kita bisa menggunakan query filter `ip.src == 184.87.193.88` yang menampilkan paket dengan ip destination 184.87.193.88.
+- Untuk mengetahui jumlah paket yang menuju suatu IP, kita bisa menggunakan query filter `ip.dst == 184.87.193.88` yang menampilkan paket dengan ip destination 184.87.193.88.
 - Hasilnya yaitu terdapat 6 paket.
 ![image](https://github.com/tigoyoga/Jarkom-Modul-1-B25-2023/assets/88433109/67e8d0f0-23b5-4a23-8271-f9e4302e70c0)
 
